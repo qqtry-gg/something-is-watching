@@ -1,4 +1,6 @@
+using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngineInternal;
 
@@ -7,6 +9,7 @@ public class pickUpFlashLight : MonoBehaviour
     [SerializeField] GameObject flashLight;
     [SerializeField] GameObject campFire;
     [SerializeField] TextMeshProUGUI textMeshPro;
+    [SerializeField] TextMeshProUGUI warningTextMeshPro;
     [SerializeField] flashLightScript playerScript;
     [SerializeField] gameManagerScript gameManagerScript;
     [SerializeField] fireScript fireScript;

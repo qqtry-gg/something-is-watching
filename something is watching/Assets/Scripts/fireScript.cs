@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class fireScript : MonoBehaviour
 {
     public float timeBeforeDisappearing;
+    [SerializeField] TextMeshProUGUI warningTextMeshPro;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,10 +16,22 @@ public class fireScript : MonoBehaviour
     void Update()
     {
         timeBeforeDisappearing -= Time.deltaTime;
+        if (timeBeforeDisappearing <= 10 && timeBeforeDisappearing > 0)
+        {
+            warningTextMeshPro.text = "campfire is running low on fuel!";
+        }
+        else if (timeBeforeDisappearing > 10)
+        {
+            warningTextMeshPro.text = "";
+        }
+
+
 
         if (timeBeforeDisappearing <= 0)
         {
+            warningTextMeshPro.text = "";
             Destroy(gameObject);
         }
+        
     }
 }
