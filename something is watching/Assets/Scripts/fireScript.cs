@@ -16,11 +16,11 @@ public class fireScript : MonoBehaviour
     void Update()
     {
         timeBeforeDisappearing -= Time.deltaTime;
-        if (timeBeforeDisappearing <= 10 && timeBeforeDisappearing > 0)
+        if (timeBeforeDisappearing <= 20 && timeBeforeDisappearing > 0)
         {
             warningTextMeshPro.text = "campfire is running low on fuel!";
         }
-        else if (timeBeforeDisappearing > 10)
+        else if (timeBeforeDisappearing > 20)
         {
             warningTextMeshPro.text = "";
         }
