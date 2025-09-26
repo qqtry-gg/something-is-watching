@@ -43,7 +43,7 @@ public class pickUpFlashLight : MonoBehaviour
                     {
                         gameManagerScript.sticks -= 1;
                         textMeshPro.text = "Sticks: " + gameManagerScript.sticks;
-                        fireScript.timeBeforeDisappearing += 10;
+                        fireScript.timeBeforeDisappearing += 20;
                     }
                 }
             }

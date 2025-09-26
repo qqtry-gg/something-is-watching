@@ -5,7 +5,7 @@ public class MonsterScript : MonoBehaviour
 {
     [SerializeField] NavMeshAgent monsterAI;
     [SerializeField] Transform player;
-    public float chaseRange = 10f;
+    public float chaseRange = 30f;
     private Vector3 patrolTarget;
     private bool playerInSafeZone = false;
 
