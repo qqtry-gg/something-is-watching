@@ -91,7 +91,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5.5
+  m_Speed: 5
   m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterAI: {fileID: 4768825744742615265}
   player: {fileID: 0}
+  chaseRange: 30
 --- !u!1001 &2547632406756309541
 PrefabInstance:
   m_ObjectHideFlags: 0
