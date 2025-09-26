@@ -5,6 +5,7 @@ public class fireScript : MonoBehaviour
 {
     public float timeBeforeDisappearing;
     [SerializeField] TextMeshProUGUI warningTextMeshPro;
+    [SerializeField] GameObject safeZoneToDestroy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +31,7 @@ public class fireScript : MonoBehaviour
         if (timeBeforeDisappearing <= 0)
         {
             warningTextMeshPro.text = "";
+            Destroy(safeZoneToDestroy);
             Destroy(gameObject);
         }
         
