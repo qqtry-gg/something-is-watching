@@ -19668,3 +19668,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBeforeDisappearing: 120
   warningTextMeshPro: {fileID: 0}
+  safeZoneToDestroy: {fileID: 0}

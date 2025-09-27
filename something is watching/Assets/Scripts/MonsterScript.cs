@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -5,9 +6,14 @@ public class MonsterScript : MonoBehaviour
 {
     [SerializeField] NavMeshAgent monsterAI;
     [SerializeField] Transform player;
+    [SerializeField] SC_FPSController fpsController;
+    [SerializeField] AudioSource bite;
+    [SerializeField] AudioSource monsterGrowl;
     public float chaseRange = 30f;
     private Vector3 patrolTarget;
     private bool playerInSafeZone = false;
+    bool used = false;
+    Animator animator;
 
     private enum State {Patrol, Chase}
     private State currentState = State.Patrol;
@@ -15,6 +21,7 @@ public class MonsterScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         SetNewPatrolPoint();
     }
 
@@ -54,5 +61,32 @@ public class MonsterScript : MonoBehaviour
     public void SetSafeZone(bool isInSafeZone)
     {
         playerInSafeZone = isInSafeZone;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !used)
+        {
+            Debug.Log("Dotykam playera");
+            fpsController.enabled = false;
+            monsterAI.enabled = false;
+            Vector3 lookTarget = transform.position + Vector3.up * 2f; // 2 jednostki wy¿ej
+            Camera.main.transform.LookAt(lookTarget);
+            StartCoroutine(biteCooldown());
+            StartCoroutine(biteCooldown());
+            StartCoroutine(biteCooldown());
+            used = true;
+            animator.SetTrigger("Attacking");
+        }
+    }
+    IEnumerator biteCooldown()
+    {
+        bool canPlayBite = true;
+        if (canPlayBite)
+        {
+            canPlayBite = false;
+            yield return new WaitForSeconds(0.5f);
+            bite.Play();
+            canPlayBite = true;
+        }  
     }
 }
