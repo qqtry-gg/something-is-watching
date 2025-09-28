@@ -14,6 +14,7 @@ public class MonsterScript : MonoBehaviour
     private bool playerInSafeZone = false;
     bool used = false;
     Animator animator;
+    [SerializeField] FadeScript fadeScript;
 
     private enum State {Patrol, Chase}
     private State currentState = State.Patrol;
@@ -84,16 +85,17 @@ public class MonsterScript : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             bite.Play();
-            yield return new WaitForSeconds(bite.clip.length);
+            yield return new WaitForSeconds(bite.clip.length - 0.5f);
         }
+        fadeScript.FadeIn();
     }
     IEnumerator growlPlay()
     {
         while (true)
         {
             int time = Random.Range(20, 60);
-            monsterGrowl.Play();
             yield return new WaitForSeconds(time);
+            monsterGrowl.Play();
         }
     }
 }

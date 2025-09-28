@@ -81,7 +81,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 1.75}
+  m_Size: {x: 1.35, y: 2, z: 1.75}
   m_Center: {x: 0, y: 1, z: 0.3}
 --- !u!195 &4768825744742615265
 NavMeshAgent:
@@ -123,6 +123,7 @@ MonoBehaviour:
   bite: {fileID: 4810054434707139413}
   monsterGrowl: {fileID: 6758571512188422607}
   chaseRange: 30
+  fadeScript: {fileID: 0}
 --- !u!1 &6099146416426661852
 GameObject:
   m_ObjectHideFlags: 0
