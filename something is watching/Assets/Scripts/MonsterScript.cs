@@ -23,11 +23,13 @@ public class MonsterScript : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         SetNewPatrolPoint();
+        StartCoroutine(growlPlay());
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (!playerInSafeZone && Vector3.Distance(transform.position, player.position) < chaseRange)
         {
             currentState = State.Chase;
@@ -48,6 +50,7 @@ public class MonsterScript : MonoBehaviour
             }
             monsterAI.SetDestination(patrolTarget);
         }
+
     }
     void SetNewPatrolPoint()
     {
@@ -72,21 +75,25 @@ public class MonsterScript : MonoBehaviour
             Vector3 lookTarget = transform.position + Vector3.up * 2f; // 2 jednostki wy¿ej
             Camera.main.transform.LookAt(lookTarget);
             StartCoroutine(biteCooldown());
-            StartCoroutine(biteCooldown());
-            StartCoroutine(biteCooldown());
             used = true;
             animator.SetTrigger("Attacking");
         }
     }
     IEnumerator biteCooldown()
     {
-        bool canPlayBite = true;
-        if (canPlayBite)
+        for (int i = 0; i < 3; i++)
         {
-            canPlayBite = false;
-            yield return new WaitForSeconds(0.5f);
             bite.Play();
-            canPlayBite = true;
-        }  
+            yield return new WaitForSeconds(bite.clip.length);
+        }
+    }
+    IEnumerator growlPlay()
+    {
+        while (true)
+        {
+            int time = Random.Range(20, 60);
+            monsterGrowl.Play();
+            yield return new WaitForSeconds(time);
+        }
     }
 }
