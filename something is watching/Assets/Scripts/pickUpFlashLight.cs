@@ -8,17 +8,27 @@ public class pickUpFlashLight : MonoBehaviour
 {
     [SerializeField] GameObject flashLight;
     [SerializeField] GameObject campFire;
+    [SerializeField] GameObject phone;
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] TextMeshProUGUI warningTextMeshPro;
     [SerializeField] flashLightScript playerScript;
     [SerializeField] gameManagerScript gameManagerScript;
     [SerializeField] fireScript fireScript;
+
+    [SerializeField] MonsterScript monsterScript;
+
+    bool canUsePhone = false;
+    bool used = false;
     private void Start()
     {
         fireScript = GameObject.Find("Fire").GetComponent<fireScript>();
     }
     void Update()
     {
+        if (monsterScript.currentState == MonsterScript.State.Chase)
+        {
+            canUsePhone = true;
+        }
         if (Input.GetKeyUp(KeyCode.G))
         {
             Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2, 0));
@@ -44,6 +54,18 @@ public class pickUpFlashLight : MonoBehaviour
                         gameManagerScript.sticks -= 1;
                         textMeshPro.text = "Sticks: " + gameManagerScript.sticks;
                         fireScript.timeBeforeDisappearing += 20;
+                    }
+                }
+                else if (hit.collider.gameObject == phone)
+                {
+                    if (canUsePhone && !used)
+                    {
+                        Debug.Log("Calling for help...");
+                        used = true;
+                    }
+                    else
+                    {
+                        Debug.Log("There is nothing wrong... you don't need to call for help");
                     }
                 }
             }

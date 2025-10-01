@@ -16,8 +16,8 @@ public class MonsterScript : MonoBehaviour
     Animator animator;
     [SerializeField] FadeScript fadeScript;
 
-    private enum State {Patrol, Chase}
-    private State currentState = State.Patrol;
+    public enum State {Patrol, Chase}
+    public State currentState = State.Patrol;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
