@@ -14,6 +14,9 @@ public class pickUpFlashLight : MonoBehaviour
     [SerializeField] flashLightScript playerScript;
     [SerializeField] gameManagerScript gameManagerScript;
     [SerializeField] fireScript fireScript;
+    [SerializeField] GameObject callingUI;
+    [SerializeField] TextMeshProUGUI callingTextUI;
+    [SerializeField] AudioSource callingAudioSource;
 
     [SerializeField] MonsterScript monsterScript;
 
@@ -60,15 +63,30 @@ public class pickUpFlashLight : MonoBehaviour
                 {
                     if (canUsePhone && !used)
                     {
-                        Debug.Log("Calling for help...");
+                        StartCoroutine(ICalling());
                         used = true;
                     }
                     else
                     {
-                        Debug.Log("There is nothing wrong... you don't need to call for help");
+                        StartCoroutine(IAlreadyCalled());
                     }
                 }
             }
         }
+    }
+    IEnumerator ICalling()
+    {
+        callingUI.SetActive(true);
+        callingTextUI.text = "Calling For Help....";
+        callingAudioSource.Play();
+        yield return new WaitForSeconds(callingAudioSource.clip.length);
+        callingUI.SetActive(false);
+    }
+    IEnumerator IAlreadyCalled()
+    {
+        callingUI.SetActive(true);
+        callingTextUI.text = "Theres Nothing wrong...";
+        yield return new WaitForSeconds(2);
+        callingUI.SetActive(false);
     }
 }
