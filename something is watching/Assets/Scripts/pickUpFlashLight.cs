@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngineInternal;
 
 public class pickUpFlashLight : MonoBehaviour
@@ -17,6 +18,8 @@ public class pickUpFlashLight : MonoBehaviour
     [SerializeField] GameObject callingUI;
     [SerializeField] TextMeshProUGUI callingTextUI;
     [SerializeField] AudioSource callingAudioSource;
+    [SerializeField] GameObject Car;
+    [SerializeField] NavMeshAgent monsterAI;
 
     [SerializeField] MonsterScript monsterScript;
 
@@ -81,6 +84,9 @@ public class pickUpFlashLight : MonoBehaviour
         callingAudioSource.Play();
         yield return new WaitForSeconds(callingAudioSource.clip.length);
         callingUI.SetActive(false);
+        monsterAI.speed = 10f;
+        yield return new WaitForSeconds(180);
+        Instantiate(Car, new Vector3(9.334999f, 2.929867f, 43.8714f), Quaternion.identity);
     }
     IEnumerator IAlreadyCalled()
     {
