@@ -85,7 +85,7 @@ public class pickUpFlashLight : MonoBehaviour
         yield return new WaitForSeconds(callingAudioSource.clip.length);
         callingUI.SetActive(false);
         monsterAI.speed = 10f;
-        yield return new WaitForSeconds(180);
+        yield return new WaitForSeconds(20);
         Instantiate(Car, new Vector3(9.334999f, 2.929867f, 43.8714f), Quaternion.identity);
     }
     IEnumerator IAlreadyCalled()

@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,6 +11,7 @@ public class FadeScript : MonoBehaviour
     [SerializeField] GameObject loseButton;
     [SerializeField] float fadeDuration = 2f;
     [SerializeField] GameObject GameUI;
+    public TextMeshProUGUI losetext;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
