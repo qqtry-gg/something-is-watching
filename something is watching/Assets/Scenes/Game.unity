@@ -5745,6 +5745,8 @@ MonoBehaviour:
   callingUI: {fileID: 1723292946}
   callingTextUI: {fileID: 1735936497}
   callingAudioSource: {fileID: 2117389674}
+  Car: {fileID: 1829922410192357324, guid: ad0f80dc67ce9684b8972b2f04854d93, type: 3}
+  monsterAI: {fileID: 1959455945}
   monsterScript: {fileID: 1959455944}
 --- !u!54 &801811972
 Rigidbody:
@@ -7385,6 +7387,7 @@ MonoBehaviour:
   loseButton: {fileID: 2076717486}
   fadeDuration: 1.5
   GameUI: {fileID: 696686928}
+  losetext: {fileID: 876928449}
 --- !u!1001 &1038521932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12416,6 +12419,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c07513936d70648baa811db43b2816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!195 &1959455945 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 4768825744742615265, guid: af9f138ca1214ae41beb955d1406704e, type: 3}
+  m_PrefabInstance: {fileID: 1028147372999892329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1964852918 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5780545108056687457, guid: 209b15dd421b315458b25e6457874d89, type: 3}
