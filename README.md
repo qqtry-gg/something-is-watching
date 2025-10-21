@@ -29,6 +29,6 @@ You can point at:
 ### ScreenShots
 //ToDo
 ### Details
-<ins>**Author**</ins>: qqtry-gg (try-gg)
-<ins>**Contact**</ins>: //ToDo
+<ins>**Author**</ins>: qqtry-gg (try-gg)<br>
+<ins>**Contact**</ins>: //ToDo<br>
 <ins>**Version**</ins>: 1.0.1
