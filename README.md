@@ -9,7 +9,7 @@ You didn't give a damn about them and just went straight into the camping site. 
 - Interacting with things G (you can pick up items and put the into the campfire, also you can interact with the telephone)
 - Using flashlight F (only if you picked it up already)
 ### How to win
-- Monster needs to see you after this you can call for help on the telephone which is on one of the things
+- Monster needs to see you, after this you can call for help on the telephone which is placed on one of the trees
 - after calling for help you need to wait for 3-5min for police car to appear
 - after it appeared you need to run to the car (be aware monster is 2x faster after you called for help)
 - while waitning for the car to apear you need to collect sticks so the campfire doesn't go out (the monster is scared of fire so if you are close to the campfire then the monster won't go towards you)
