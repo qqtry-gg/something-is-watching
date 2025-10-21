@@ -3,7 +3,7 @@
 ### Description
 Simple game made in unity by me.<br>
 In this game you are a human who want to spend a night far away from any civilizations so you decied to go camping. While heading into the camping site you encountered few warning signs.<br>
-You didn't give a damn about them and just went straight into the camping site. it was about 11pm when you heard a wierd sound coming from the forest...(this is the moment when the game starts) well it was wierd, You thought to your self that it would be a better idea to just head back.... well it wasn't so simple, you managed to get back to the place where you parked your car, but when you saw it, it was just an uslees piece of destroyed crap, who could do it in such a small amount of time. You didn't knew so you just decied to go back to the camp place and call for help but there were no signal so you just decied to search the forest for somthing useful.
+You didn't give a damn about them and just went straight into the camping site. it was about 11pm when you heard a wierd sound coming from the forest...(this is the moment when the game starts) well it was wierd, You thought to your self that it would be a better idea to just head back.... well it wasn't so simple, you managed to get back to the place where you parked your car, but when you saw it, it was just an uslees piece of destroyed crap, who could do it in such a small amount of time. You didn't knew so you just decied to go back to the camp place and call for help but there were no signal so you just decied to search the forest for something useful.
 ### How to play
 - Movement AWSD/arrow keys
 - Interacting with things G (you can pick up items and put the into the campfire, also you can interact with the telephone)
