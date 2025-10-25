@@ -13,11 +13,11 @@ public class MenuManager : MonoBehaviour
     }
     public void Settings()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
     public void Credits()
     {
-        Debug.Log("Kiedyœ dodam Credits");
+        SceneManager.LoadScene(2);
     }
     public void Menu()
     {

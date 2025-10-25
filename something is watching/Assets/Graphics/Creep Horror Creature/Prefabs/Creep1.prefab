@@ -124,6 +124,7 @@ MonoBehaviour:
   monsterGrowl: {fileID: 6758571512188422607}
   chaseRange: 30
   fadeScript: {fileID: 0}
+  currentState: 0
 --- !u!1 &6099146416426661852
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ AudioSource:
   m_GameObject: {fileID: 6099146416426661852}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1532035708749201637, guid: cca8b3ff5b6bf404da498f914813c0a9, type: 2}
   m_audioClip: {fileID: 8300000, guid: e8fd0d362f4e14c478356af5d791482d, type: 3}
   m_Resource: {fileID: 8300000, guid: e8fd0d362f4e14c478356af5d791482d, type: 3}
   m_PlayOnAwake: 0
@@ -294,7 +295,7 @@ AudioSource:
   m_GameObject: {fileID: 8005410797435346384}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 1532035708749201637, guid: cca8b3ff5b6bf404da498f914813c0a9, type: 2}
   m_audioClip: {fileID: 8300000, guid: 3456ef4474b641344bfb0707a4d3c6d2, type: 3}
   m_Resource: {fileID: 8300000, guid: 3456ef4474b641344bfb0707a4d3c6d2, type: 3}
   m_PlayOnAwake: 0
