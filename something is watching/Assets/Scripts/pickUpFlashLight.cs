@@ -20,6 +20,7 @@ public class pickUpFlashLight : MonoBehaviour
     [SerializeField] AudioSource callingAudioSource;
     [SerializeField] GameObject Car;
     [SerializeField] NavMeshAgent monsterAI;
+    [SerializeField] FadeScript fadeScript;
 
     [SerializeField] MonsterScript monsterScript;
 
@@ -76,6 +77,7 @@ public class pickUpFlashLight : MonoBehaviour
                 }
             }
         }
+        
     }
     IEnumerator ICalling()
     {
@@ -85,7 +87,7 @@ public class pickUpFlashLight : MonoBehaviour
         yield return new WaitForSeconds(callingAudioSource.clip.length);
         callingUI.SetActive(false);
         monsterAI.speed = 10f;
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(180);
         Instantiate(Car, new Vector3(9.334999f, 2.929867f, 43.8714f), Quaternion.identity);
     }
     IEnumerator IAlreadyCalled()
@@ -94,5 +96,13 @@ public class pickUpFlashLight : MonoBehaviour
         callingTextUI.text = "Theres Nothing wrong...";
         yield return new WaitForSeconds(2);
         callingUI.SetActive(false);
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.collider.CompareTag("Car"))
+        {
+            fadeScript.FadeIn();
+            fadeScript.losetext.text = "You Managed to escape from the monster!";
+        }
     }
 }
